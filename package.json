@@ -1,0 +1,35 @@
+{
+    "name": "yt-2-rtmp",
+    "version": "1.0.0",
+    "description": "Livestream from a YouTube video to an RTMP server using just the song title or keyword for song search.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hunglsxx/yt-2-rtmp.git"
+    },
+    "bugs": {
+        "url": "https://github.com/hunglsxx/yt-2-rtmp/issues"
+    },
+    "homepage": "https://github.com/hunglsxx/yt-2-rtmp",
+    "keywords": [ "livestream", "ffmpeg", "yt-dlp", "rtmp", "song title", "song search", "youtube video"],
+
+    "author": "hungls",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "youtube-search-api": "^1.2.1",
+        "yt-dlp-wrap": "^2.3.12"
+    }
+}
