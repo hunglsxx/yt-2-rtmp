@@ -12,6 +12,7 @@ export interface LivestreamConfig {
     rtmp: string;
     loop?: number;
     draw?: string;
+    ffmpegPath?: string;
 }
 export declare class Youtube {
     keyword: string;

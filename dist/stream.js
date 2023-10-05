@@ -16,7 +16,13 @@ class Stream {
             '-reconnect_delay_max', '5',
             '-re',
             '-stream_loop', `${this.loop}`,
-            '-i', this.input
+            '-i', this.input,
+            '-c:a', 'aac',
+            '-b:a', '128k',
+            '-ar', '44100',
+            '-c:v', 'libx264',
+            '-b:v', '1500k',
+            '-preset', 'veryfast'
         ];
         if (options && options.length)
             params = params.concat(options);

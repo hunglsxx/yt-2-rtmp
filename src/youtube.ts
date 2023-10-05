@@ -16,6 +16,7 @@ export interface LivestreamConfig {
     rtmp: string;
     loop?: number;
     draw?: string;
+    ffmpegPath?: string;
 }
 
 export class Youtube {
@@ -82,7 +83,8 @@ export class Youtube {
         this.stream = new Stream({
             input: this.videoDownloadUrl,
             output: options.rtmp,
-            loop: options.loop || -1
+            loop: options.loop || -1,
+            ffmpegPath: options.ffmpegPath || 'ffmpeg'
         });
 
         let pos: string = 'h/2';

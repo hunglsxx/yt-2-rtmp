@@ -58,7 +58,8 @@ class Youtube {
         this.stream = new stream_1.Stream({
             input: this.videoDownloadUrl,
             output: options.rtmp,
-            loop: options.loop || -1
+            loop: options.loop || -1,
+            ffmpegPath: options.ffmpegPath || 'ffmpeg'
         });
         let pos = 'h/2';
         switch (options.draw) {
