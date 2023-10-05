@@ -1,6 +1,10 @@
 ### INSTALL
 ```npm install yt-2-rtmp```
 
+### REQUIRES
+- ffmpeg
+- yt-dlp
+
 ### EXAMPLES
 ```
 import { Youtube, LivestreamConfig } from 'yt-2-rtmp';
