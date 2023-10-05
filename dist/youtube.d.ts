@@ -14,7 +14,7 @@ export interface LivestreamConfig {
     draw?: string;
     ffmpegPath?: string;
 }
-export declare class Youtube {
+export declare class YoutubeVideo {
     keyword: string;
     messages: Array<string>;
     videoId: string;
@@ -34,6 +34,7 @@ export declare class Youtube {
     pauseStream(): void;
     disposeStream(): void;
     resumeStream(): void;
+    killStream(): void;
     findOne(): Promise<any>;
     find(limit: number): Promise<any>;
 }

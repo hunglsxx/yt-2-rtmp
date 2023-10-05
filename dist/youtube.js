@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Youtube = void 0;
+exports.YoutubeVideo = void 0;
 const youtubesearchapi = require('youtube-search-api');
 const yt_dlp_wrap_1 = __importDefault(require("yt-dlp-wrap"));
 const stream_1 = require("./stream");
-class Youtube {
+class YoutubeVideo {
     constructor(options) {
         this.videoId = "";
         this.videoTitle = "";
@@ -99,6 +99,10 @@ class Youtube {
         var _a;
         (_a = this.stream) === null || _a === void 0 ? void 0 : _a.resume();
     }
+    killStream() {
+        var _a;
+        (_a = this.stream) === null || _a === void 0 ? void 0 : _a.kill();
+    }
     async findOne() {
         try {
             return (await youtubesearchapi
@@ -120,4 +124,4 @@ class Youtube {
         }
     }
 }
-exports.Youtube = Youtube;
+exports.YoutubeVideo = YoutubeVideo;

@@ -73,8 +73,12 @@ export class Stream {
         return paused;
     }
 
-    public async resume() {
+    public resume() {
         console.log("Sorry, currently resume function is not support");
+    }
+
+    public kill() {
+        console.log("Sorry, currently kill function is not support");
     }
 
     private _spawn(command: string, args: Array<string>) {

@@ -19,7 +19,7 @@ export interface LivestreamConfig {
     ffmpegPath?: string;
 }
 
-export class Youtube {
+export class YoutubeVideo {
     public keyword: string;
     public messages: Array<string>;
 
@@ -128,6 +128,10 @@ export class Youtube {
 
     public resumeStream() {
         this.stream?.resume();
+    }
+
+    public killStream() {
+        this.stream?.kill();
     }
 
     public async findOne() {

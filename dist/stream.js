@@ -53,8 +53,11 @@ class Stream {
         console.log("Paused stream", paused);
         return paused;
     }
-    async resume() {
+    resume() {
         console.log("Sorry, currently resume function is not support");
+    }
+    kill() {
+        console.log("Sorry, currently kill function is not support");
     }
     _spawn(command, args) {
         const process = spawn(command, args);

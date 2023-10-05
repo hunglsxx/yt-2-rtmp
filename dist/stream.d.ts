@@ -14,6 +14,7 @@ export declare class Stream {
     dispose(): any;
     stop(): void;
     pause(): any;
-    resume(): Promise<void>;
+    resume(): void;
+    kill(): void;
     private _spawn;
 }
