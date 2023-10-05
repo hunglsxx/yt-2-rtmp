@@ -29,8 +29,8 @@ export class Stream {
             '-stream_loop', `${this.loop}`,
             '-i', this.input,
             '-c:a', 'aac',
-            '-b:a', '128k', 
-            '-ar', '44100', 
+            '-b:a', '128k',
+            '-ar', '44100',
             '-c:v', 'libx264',
             '-b:v', '1500k',
             '-preset', 'veryfast'
@@ -74,11 +74,23 @@ export class Stream {
     }
 
     public resume() {
-        console.log("Sorry, currently resume function is not support");
+        let resumed = spawnSync('sh', [
+            '-c',
+            `ps aux | grep '[f]fmpeg.*${this.output}' | awk '{print $2}' | xargs -I {} kill -s SIGCONT {}`
+        ], { encoding: 'utf8' });
+
+        console.log("Resuming stream", resumed);
+        return resumed;
     }
 
     public kill() {
-        console.log("Sorry, currently kill function is not support");
+        let killed = spawnSync('sh', [
+            '-c',
+            `ps aux | grep '[f]fmpeg.*${this.output}' | awk '{print $2}' | xargs kill -9`
+        ], { encoding: 'utf8' });
+
+        console.log("Killed stream", killed);
+        return killed;
     }
 
     private _spawn(command: string, args: Array<string>) {

@@ -54,10 +54,20 @@ class Stream {
         return paused;
     }
     resume() {
-        console.log("Sorry, currently resume function is not support");
+        let resumed = spawnSync('sh', [
+            '-c',
+            `ps aux | grep '[f]fmpeg.*${this.output}' | awk '{print $2}' | xargs -I {} kill -s SIGCONT {}`
+        ], { encoding: 'utf8' });
+        console.log("Resuming stream", resumed);
+        return resumed;
     }
     kill() {
-        console.log("Sorry, currently kill function is not support");
+        let killed = spawnSync('sh', [
+            '-c',
+            `ps aux | grep '[f]fmpeg.*${this.output}' | awk '{print $2}' | xargs kill -9`
+        ], { encoding: 'utf8' });
+        console.log("Killed stream", killed);
+        return killed;
     }
     _spawn(command, args) {
         const process = spawn(command, args);

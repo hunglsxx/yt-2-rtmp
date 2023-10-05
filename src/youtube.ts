@@ -32,7 +32,7 @@ export class YoutubeVideo {
     public videoDownloadUrl: string = "";
     public ytDlp: YTDlpWrap;
 
-    public stream:Stream | undefined;
+    public stream: Stream | undefined;
 
     constructor(options: YoutubeConfig) {
         this.keyword = options.keyword || "";

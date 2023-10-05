@@ -1,6 +1,6 @@
 {
     "name": "yt-2-rtmp",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Livestream from a YouTube video to an RTMP server using just the song title or keyword for song search.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
