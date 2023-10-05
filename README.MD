@@ -67,7 +67,9 @@ let manySong = await searchSong.find(limit); // Return 10 songs
 ```
 
 ### EXAMPLES
-- The code below livestreams a playlist of songs with messages to Facebook Live smoothly, minimizing interruptions during the live session.
+The code below livestreams a playlist of songs with messages to Facebook Live smoothly, minimizing interruptions during the live session.
+The code below is written in TypeScript. To run the code, a simple approach is to use ```ts-node```.
+
 ```
 import { YoutubeVideo, LivestreamConfig } from 'yt-2-rtmp';
 
